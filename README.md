@@ -5,14 +5,18 @@ Frontend --> Mui.com
 Install dependencies from 
 https://mui.com/material-ui/getting-started/installation/
 
-To run
-
 ```js
 npm install -g vite
 ```
+
+To run
 
 ```js
 npm run dev
 ```
 
-
+To update
+```js
+npm run build
+npx cap sync
+```
