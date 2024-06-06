@@ -20,3 +20,9 @@ To update
 npm run build
 npx cap sync
 ```
+
+Android
+```js
+npx cap add android
+npx cap open android
+```
