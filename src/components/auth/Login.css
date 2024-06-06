@@ -1,0 +1,91 @@
+.login {
+    display: flex;
+    background-color: #d9242400;
+    border: 3px solid#947a7a;
+    border-radius: 10px;
+    height: 30px;
+    color: #5e5e5e;
+}
+
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+}
+
+.modal-content {
+    display: fixed;
+    text-align: center;
+    margin-left:25%;
+    margin-right: 25%;
+    margin-top: 10%;
+    padding: 20px;
+    color: #5e5e5e;
+    background-color: #011d1062;
+    border-color: #011d10;
+    border-radius: 10px;
+    box-shadow: #1007076c;
+    width: 50%;
+    height: 30%;
+}
+
+@media (max-width: 500px) {
+    .modal-content {
+        width: 90%;
+    }
+}
+
+@media (max-width: 600px) {
+    form input {
+        height: 30px;
+    }
+
+    form button {
+        height: 40px;
+    }
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+form input{
+    width: 100%;
+    height: 20px;
+    border-radius: 5px;
+    border: none;
+    background: #ffffffdd;
+    padding: 5px;
+}
+
+form label{
+    font-weight: 700;
+    padding-bottom: 10px;
+}
+
+form button{
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    background: #09491c;
+    padding: 10px;
+    cursor: pointer;
+    margin: 10px;
+    color: #b8b3b3;
+    font-weight: 700;
+}
+
+form button:hover{
+    background:  #011d10; 
+    color: #5e5e5e;
+}
+
+.logo-paloma{
+    width:65px;
+    height:50px;
+}

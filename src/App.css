@@ -1,0 +1,46 @@
+.App {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .NavLogin {
+    width: 100vw;
+    display:flex;
+    background:linear-gradient(to bottom, #011d10, #347c4c ); 
+  }
+
+  #map {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+  }
+
+  .Footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to bottom, #347c4c , #011d10 ); 
+    color: white; /* #5e5e5e */
+    padding: 20px; 
+    box-sizing: border-box; 
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+  }
+  
+  .footer-column {
+    flex: 1 0 45%; 
+    margin-right: 20px; 
+  }
+  
+  .footer-section {
+    margin-bottom: 5px; /* Adjust spacing between sections */
+  }
+  
+  .footer-copyright {
+    flex-basis: 100%; /* Ensure copyright text spans full width */
+    text-align: right; 
+    padding-top: 10px;/* Center-align copyright text */
+  }
+  
