@@ -15,29 +15,42 @@ function Map() {
       maxZoom: 18
     }).addTo(map);
 
-    // Initialize marker
+    // Initialize paloma (car) marker
     const palomaIcon = L.icon({
       iconUrl: 'paloma.png',
       iconSize: [40, 30]
     });
-    const marker = L.marker([5.057812439656995, -75.49275659115038], { icon: palomaIcon }).addTo(map);
+
+    // Initialize mark icon for static markers
+    const markIcon = L.icon({
+      iconUrl: 'marker-icon-2x.png',
+      iconSize: [17, 21]
+    });
+
+    // Add the paloma (car) marker initially
+    const movingMarker = L.marker([5.057812439656995, -75.49275659115038], { icon: palomaIcon }).addTo(map);
 
     // Handle map click event
-    map.on('click', function (e: LeafletMouseEvent) { // Use LeafletMouseEvent
+    map.on('click', function (e: LeafletMouseEvent) {
       console.log(e);
-      L.marker(e.latlng).addTo(map); // Create marker using e.latlng directly
+
+      // Add a static marker at the clicked location
+      L.marker(e.latlng, { icon: markIcon }).addTo(map);
+
+      // Initialize routing control with waypoints
       (L as any).Routing.control({
         waypoints: [
-          new LatLng(5.057812439656995, -75.49275659115038), // Create LatLng objects with 'new'
-          new LatLng(e.latlng.lat, e.latlng.lng)
+          new LatLng(5.057812439656995, -75.49275659115038), // Start point
+          new LatLng(e.latlng.lat, e.latlng.lng) // End point (clicked location)
         ]
-      }).on('routesfound', function (e: any) { // Use 'any' for now, but better to specify the type if available
+      }).on('routesfound', function (e: any) {
         const routes = e.routes;
         console.log(routes);
 
-        e.routes[0].coordinates.forEach(function (coord: LatLng, index: number) { // Add index parameter
+        // Move the paloma (car) marker along the route
+        e.routes[0].coordinates.forEach(function (coord: LatLng, index: number) {
           setTimeout(function () {
-            marker.setLatLng(coord);
+            movingMarker.setLatLng(coord);
           }, 100 * index);
         });
       }).addTo(map);
@@ -51,7 +64,7 @@ function Map() {
 
   return (
     <div className='Map'>
-      <div id="map"></div>
+      <div id="map" style={{ height: '100vh' }}></div>
     </div>
   );
 }
