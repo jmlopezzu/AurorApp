@@ -26,3 +26,5 @@ Android
 npx cap add android
 npx cap open android
 ```
+
+npm install leaflet-control-geocoder
