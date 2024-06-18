@@ -28,7 +28,8 @@ const AppRouter = () => {
     return (
         <>
             <Routes>
-                <Route path="/" element={<Login />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/" element={<MapPage setCurrentPosition={setCurrentPosition} />} />
                 <Route path="/map" element={<MapPage setCurrentPosition={setCurrentPosition} />} />
             </Routes>
 
