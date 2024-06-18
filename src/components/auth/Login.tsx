@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import { Modal, Button } from '@mui/material'
 import './Login.css'
 import { loginService } from '../../services/login';
-// import { login } from '../../../services/login';
 
 export default function Login() {
     const [usernameOrEmail, setUsernameOrEmail] = useState('');
@@ -48,7 +47,7 @@ export default function Login() {
     return (
         <>
             <div className='login'>
-                <Button onClick={handleOpen} style={{color: 'white'}}>Ingresar</Button>
+                <Button onClick={handleOpen} style={{color: 'green'}}>Ingresar</Button>
                 <Modal
                     open={open}
                     onClose={handleClose}
