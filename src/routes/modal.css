@@ -1,8 +1,12 @@
 /* modal.css */
+.Modal{
+    color:white;
+}
 
 .ModalContent {
-    background-color: #011d1062;
+    background-color: #011d10ad;
     /* Green background with 50% opacity */
+    
     border-radius: 10px;
     /* Rounded corners */
     padding: 20px;
@@ -19,8 +23,12 @@
 
 .ModalContent h2 {
     margin-bottom: 20px;
+    color:white;
 }
 
+.ModalContent form {
+    color:white;
+}
 .ModalContent input {
     width: calc(100% - 20px);
     /* Adjust input width */
@@ -40,6 +48,7 @@
     position: absolute;
     top: 10px;
     right: 10px;
+    color: red;
     cursor: pointer;
     background: none;
     border: none;
