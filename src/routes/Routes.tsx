@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import MapPage from '../pages/MapPage'; // Página donde estará el mapa
-import ReactModal from 'react-modal';
+import Modal from 'react-modal';
 import Login from '../components/auth/Login';
 import * as L from 'leaflet';
 import '../routes/modal.css';
 
 // Ensure Modal.setAppElement is called correctly
-ReactModal.setAppElement('#root');
+Modal.setAppElement('#root');
 
 const AppRouter: React.FC = () => {
     const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -52,7 +52,7 @@ const AppRouter: React.FC = () => {
                 Registrar Visita
             </button>
 
-            <ReactModal
+            <Modal
                 isOpen={modalIsOpen}
                 onRequestClose={() => setModalIsOpen(false)}
                 contentLabel="Save Location"
@@ -101,7 +101,7 @@ const AppRouter: React.FC = () => {
                         Cancelar
                     </button>
                 </form>
-            </ReactModal>
+            </Modal>
         </>
     );
 };
