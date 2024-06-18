@@ -47,7 +47,7 @@ export default function Login() {
     return (
         <>
             <div className='login'>
-                <Button onClick={handleOpen} style={{color: 'green'}}>Ingresar</Button>
+                <Button onClick={handleOpen} style={{color: 'white'}}>Ingresar</Button>
                 <Modal
                     open={open}
                     onClose={handleClose}

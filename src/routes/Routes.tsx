@@ -1,20 +1,21 @@
 import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import MapPage from '../pages/MapPage'; // Página donde estará el mapa
-import Modal from 'react-modal';
+import ReactModal from 'react-modal';
 import Login from '../components/auth/Login';
 import * as L from 'leaflet';
 import '../routes/modal.css';
 
-Modal.setAppElement('#root');
+// Ensure Modal.setAppElement is called correctly
+ReactModal.setAppElement('#root');
 
-const AppRouter = () => {
+const AppRouter: React.FC = () => {
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [currentPosition, setCurrentPosition] = useState<L.LatLng | null>(null);
-    const [locationId, setLocationId] = useState('');
-    const [phoneNumber, setPhoneNumber] = useState('');
-    const [customerName, setCustomerName] = useState('');
-
+    const [locationId, setLocationId] = useState<string>('');
+    const [phoneNumber, setPhoneNumber] = useState<string>('');
+    const [customerName, setCustomerName] = useState<string>('');
+    
     const handleSaveLocation = () => {
         if (currentPosition) {
             console.log('Cedula del Cliente:', locationId);
@@ -28,7 +29,8 @@ const AppRouter = () => {
     return (
         <>
             <Routes>
-                <Route path="/" element={<Login />} />
+            <Route path="/" element={<MapPage setCurrentPosition={setCurrentPosition} />} />
+            <Route path="/login" element={<Login />} />
                 <Route path="/map" element={<MapPage setCurrentPosition={setCurrentPosition} />} />
             </Routes>
 
@@ -50,18 +52,20 @@ const AppRouter = () => {
                 Registrar Visita
             </button>
 
-            <Modal
+            <ReactModal
                 isOpen={modalIsOpen}
                 onRequestClose={() => setModalIsOpen(false)}
                 contentLabel="Save Location"
                 className="ModalContent"
                 overlayClassName="Overlay"
             >
-                <img className='logo-paloma' src='paloma.png'></img>
                 <button className="ModalClose" onClick={() => setModalIsOpen(false)}>
                     X
                 </button>
-                <h2>ZGPS - Registrar Visita</h2>
+                <div className="modal-header">
+                    <img className='logo-paloma' src='paloma.png' alt="logo" />
+                    <h2>Registrar Visita</h2>
+                </div>
                 <form>
                     <label>
                         Nombre del Cliente:
@@ -97,7 +101,7 @@ const AppRouter = () => {
                         Cancelar
                     </button>
                 </form>
-            </Modal>
+            </ReactModal>
         </>
     );
 };

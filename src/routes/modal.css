@@ -1,37 +1,44 @@
 /* modal.css */
 
-.ModalContent {
-    background-color: #011d1062;
-    /* Green background with 50% opacity */
-    border-radius: 10px;
-    /* Rounded corners */
-    padding: 20px;
-    max-width: 400px;
-    max-height: 700px;
-    /* Adjust width as needed */
-    margin: 0 auto;
-    /* Center the modal */
-    text-align: center;
-    /* Center content */
-    position: relative;
-    /* Ensure position */
-}
+    .ModalContent {
+        background-color: #011d06c0;
+        color: white;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1100; /* Ensure it's above Overlay */
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .Overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+    }
+    
 
 .ModalContent h2 {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .ModalContent input {
     width: calc(100% - 20px);
     /* Adjust input width */
     padding: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
 .ModalContent button {
-    margin-top: 10px;
+    margin-top: 5px;
     padding: 10px 20px;
     cursor: pointer;
 }
@@ -44,4 +51,17 @@
     background: none;
     border: none;
     font-size: 1.2em;
+    color:red;
+}
+
+.modal-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.logo-paloma {
+    margin-bottom: 10px;
 }
