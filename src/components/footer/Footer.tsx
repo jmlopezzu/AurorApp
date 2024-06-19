@@ -6,7 +6,7 @@ const Footer = () => {
 
   return (
     <div className="Footer">
-      <div className="footer-column">
+      {/* <div className="footer-column">
         <div className="footer-section">
           <Typography variant="body2">Rutas en Agenda </Typography>
           <Typography variant="body2">Grafos</Typography>
@@ -20,7 +20,7 @@ const Footer = () => {
       </div>
       <div className="footer-section">
           <img src="R-bg.png" style={{width:"100px", marginTop:"3vh"}} alt="logo" />
-      </div>
+      </div> */}
       <Typography variant="body2" color="#5e5e5e" className="footer-copyright">
         &copy; AurorApp, {currentYear}.
       </Typography>
